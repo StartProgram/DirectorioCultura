@@ -1,0 +1,314 @@
+{% load static from staticfiles%}
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+       <title>Inicio | Casa de la cultura Quetzaltenango</title>
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css'%}" rel="stylesheet">
+	<link href="{% static 'css/main.css'%}" rel="stylesheet">
+	<link href="{% static 'css/animate.css'%}" rel="stylesheet">	
+	<link href="{% static 'css/responsive.css'%}" rel="stylesheet">
+	<link href="{% static 'css/modal.css'%}" rel="stylesheet">
+
+
+
+    <!--[if lt IE 9]>
+	    <script src="js/html5shiv.js"></script>
+	    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="{% static 'img/favicon.png'%}">
+</head><!--/head-->
+
+<body>
+	<header id="header" role="banner">		
+		<div class="main-nav">
+			<div class="container">
+				<div class="header-top">
+					<div class="pull-right social-icons">
+						<a href="#"><i class="fa fa-twitter"></i></a>
+						<a href="#"><i class="fa fa-facebook"></i></a>
+						<a href="#"><i class="fa fa-google-plus"></i></a>
+						<a href="#"><i class="fa fa-youtube"></i></a>
+					</div>
+				</div>     
+		        <div class="row">	        		
+		            <div class="navbar-header">
+		                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		                    <span class="sr-only">Toggle navigation</span>
+		                    <span class="icon-bar"></span>
+		                    <span class="icon-bar"></span>
+		                    <span class="icon-bar"></span>
+		                </button>
+		                <a class="navbar-brand" href="index.html">
+		                	<img class="img-responsive" src="{% static 'img/logo.png'%}" alt="logo">
+		                </a>                    
+		            </div>
+		            <div class="collapse navbar-collapse">
+		                <ul class="nav navbar-nav navbar-right">                 
+		                    <li class="scroll active"><a href="index.html">Inicio</a></li>
+		                    <li class="scroll"><a href="#explore">Eventos</a></li>                         
+		                    <li class="scroll"><a href="#event">Noticias</a></li>
+		                    <li class="scroll"><a href="#about">Sobre nosotros</a></li>                     
+		                    <li><a class="no-scroll" data-toggle="modal" data-target="#login-modal">Login</a></li>
+		                     <li class="scroll"><a href="#contact">Contacto</a></li>       
+		                </ul>
+		            </div>
+		        </div>
+	        </div>
+        </div>                    
+    </header>
+    <!--/#header--> 
+
+
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    	  <div class="modal-dialog">
+				<div class="loginmodal-container">
+			
+				  <form>
+					<input type="text" name="user" placeholder="Usuario">
+					<input type="password" name="pass" placeholder="Password">
+					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
+				  </form>
+					
+				  
+				</div>
+			</div>
+		  </div>
+
+
+    <section id="home">	
+		<div id="main-slider" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#main-slider" data-slide-to="0" class="active"></li>
+				<li data-target="#main-slider" data-slide-to="1"></li>
+				<li data-target="#main-slider" data-slide-to="2"></li>
+			</ol>
+			<div class="carousel-inner">
+				<div class="item active">
+					<img class="img-responsive" src="{% static 'img/slider/bg1.jpg'%}" alt="slider">						
+					<div class="carousel-caption">
+						<h2>Concierto musical </h2>
+						<h4>Concierto de la orquesta de Quetzaltenango</h4>
+						<a href="#">Ver mas<i class="fa fa-angle-right"></i></a>
+					</div>
+				</div>
+				<div class="item">
+					<img class="img-responsive" src="{% static 'img/slider/bg2.jpg'%}" alt="slider">	
+					<div class="carousel-caption">
+						<h2>Obra de teatro </h2>
+						<h4>El grupo Js presentara su obra de teatro</h4>
+						<a href="#">Ver mas<i class="fa fa-angle-right"></i></a>
+					</div>
+				</div>
+				<div class="item">
+					<img class="img-responsive" src="{% static 'img/slider/bg3.jpg'%}" alt="slider">	
+					<div class="carousel-caption">
+						<h2>Baile Folklorico </h2>
+						<h4>Convite navideño del grupo de la casa de la cultura</h4>
+						<a href="#contact" >Ver mas <i class="fa fa-angle-right"></i></a>
+					</div>
+				</div>				
+			</div>
+		</div>    	
+    </section>
+	<!--/#home-->
+
+
+	<section id="explore">
+		<div class="container">
+			<div class="row">
+				<div class="watch">
+					<img class="img-responsive" src="{% static 'img/watch.png'%}" alt="">
+				</div>				
+				<div class="col-md-4 col-md-offset-2 col-sm-5">
+					<h2>Proximo Evento</h2>
+				</div>				
+				<div class="col-sm-7 col-md-6">					
+					<ul id="countdown">
+						<li>					
+							<span class="days time-font">00</span>
+							<p>Dias </p>
+						</li>
+						<li>
+							<span class="hours time-font">00</span>
+							<p class="">Horas </p>
+						</li>
+						<li>
+							<span class="minutes time-font">00</span>
+							<p class="">Minutos</p>
+						</li>
+						<li>
+							<span class="seconds time-font">00</span>
+							<p class="">Segundos</p>
+						</li>				
+					</ul>
+				</div>
+			</div>
+				</div>
+	</section><!--/#explore-->
+
+	<section id="event">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-9">
+					<div id="event-carousel" class="carousel slide" data-interval="false">
+						<h2 class="heading">Noticias</h2>
+						<a class="even-control-left" href="#event-carousel" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+						<a class="even-control-right" href="#event-carousel" data-slide="next"><i class="fa fa-angle-right"></i></a>
+						<div class="carousel-inner">
+							<div class="item active">
+								<div class="row">
+									<div class="col-sm-4">
+										<div class="single-event">
+											<img class="img-responsive" src="{% static 'img/event/event1.jpg'%}" alt="event-image">
+											<h4>Noticia 1</h4>
+											<h5>Descripcion</h5>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="single-event">
+											<img class="img-responsive" src="{% static 'img/event/event2.jpg'%}" alt="event-image">
+											<h4>Noticia 2</h4>
+											<h5>Descripcion</h5>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="single-event">
+											<img class="img-responsive" src="{% static 'img/event/event3.jpg'%}" alt="event-image">
+											<h4>Noticia 3 </h4>
+											<h5>Descripcion</h5>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="item">
+								<div class="row">
+									<div class="col-sm-4">
+										<div class="single-event">
+											<img class="img-responsive" src="{% static 'img/event/event1.jpg'%}" alt="event-image">
+											<h4>Noticia 1</h4>
+											<h5>Descripcion</h5>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="single-event">
+											<img class="img-responsive" src="{% static 'img/event/event2.jpg'%}" alt="event-image">
+											<h4>Noticia 2</h4>
+											<h5>Descripcion</h5>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="single-event">
+											<img class="img-responsive" src="{% static 'img/event/event3.jpg'%}" alt="event-image">
+											<h4>Noticia 3</h4>
+											<h5>Descripcion</h5>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="icono">
+					<img class="img-responsive" src="{% static 'img/guitar.png'%}" alt="guitar">
+				</div>
+			</div>			
+		</div>
+	</section><!--/#event-->
+
+	<section id="about">
+		<div class="guitar2">				
+			<img class="img-responsive" src="{% static 'img/guitar2.jpg'%}" alt="guitar">
+		</div>
+		<div class="about-content">					
+					<h2>Sobre Nosotros</h2>
+					<p>La Casa de la Cultura de Occidente es un centro de carácter cultural, situado en el municipio de Quetzaltenango, específicamente frente a su plaza central. Se inauguró oficialmente el 15 de diciembre de 1960, por determinación de Alberto Fuentes -padre de Alberto Fuentes Mohr- (Recintos para el arte, 2008).
+
+El lugar era una antigua cárcel, que funcionó como penitenciaría desde su construcción original en 1872 hasta después del gobierno de Carlos Castillo Armas, para después convertirse en un centro cultural modelo, inaugurado en 1960 (Recintos para el arte, 2008). Los planos originales son de Julián Rivera y la construcción fue obra de Francisco Sánchez Latour (Historia de Xela, s.f.).
+
+En el lugar hay una hemeroteca que resguarda ediciones de periódicos desde 1930, además de una biblioteca. En la entrada principal se encuentra una galería en la que sobresale el himno oficial de Quetzaltenango, Luna de Xelajú (Recintos para el arte, 2008).
+
+Entre las funciones de la Casa de la Cultura de Occidente se encuentra rescatar museos de biología, arqueología, historia, deporte y marimba, además de destacar a las personas que sobresalgan en estas ramas (Recintos para el arte, 2008).
+</p>
+				
+				
+		</div>
+	</section><!--/#about-->
+	
+	
+	
+
+	<section id="contact">
+		
+		<div class="contact-section">
+			<div class="ear-piece">
+				<img class="img-responsive" src="{% static 'images/ear-piece.png'%}" alt="">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-3 col-sm-offset-4">
+						<div class="contact-text">
+							<h3>Contacto</h3>
+							<address>
+								E-mail: casadelaculturaquetzaltenango@gmail.com<br>
+								Tel:  (502) 456 7890<br>
+							</address>
+						</div>
+						<div class="contact-address">
+							<h3>Direccion</h3>
+							<address>
+								Parque Central,<br>
+								Quetzaltenango,<br>							
+								Guatemala
+							</address>
+						</div>
+					</div>
+					<div class="col-sm-5">
+						<div id="contact-section">
+							<h3>Enviar Mensaje</h3>
+					    	<div class="status alert alert-success" style="display: none"></div>
+					    	<form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php">
+					            <div class="form-group">
+					                <input type="text" name="name" class="form-control" required="required" placeholder="Nombre">
+					            </div>
+					            <div class="form-group">
+					                <input type="email" name="email" class="form-control" required="required" placeholder="Email">
+					            </div>
+					            <div class="form-group">
+					                <textarea name="message" id="message" required="required" class="form-control" rows="4" placeholder="Aqui su mensaje"></textarea>
+					            </div>                        
+					            <div class="form-group">
+					                <button type="submit" class="btn btn-primary pull-right">Enviar</button>
+					            </div>
+					        </form>	       
+					    </div>
+					</div>
+				</div>
+			</div>
+		</div>		
+	</section>
+    <!--/#contact-->
+
+    <footer id="footer">
+        <div class="container">
+            <div class="text-center">
+                <p> Todos los derechos reservados  &copy;2016<a target="_blank" href="index.html"> Casa de la cultura </a> Quetzaltenango <br> Diseñado por <a target="_blank" href="#">Grupo 2 Ingenieria de Software</a></p>                
+            </div>
+        </div>
+    </footer>
+    <!--/#footer-->
+  
+    <script type="text/javascript" src="{% static 'js/jquery.js'%}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js'%}"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+  	<script type="text/javascript" src="{% static 'js/gmaps.js'%}"></script>
+	<script type="text/javascript" src="{% static 'js/smoothscroll.js'%}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.parallax.js'%}"></script>
+    <script type="text/javascript" src="{% static 'js/coundown-timer.js'%}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.scrollTo.js'%}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.nav.js'%}"></script>
+    <script type="text/javascript" src="{% static 'js/main.js'%}"></script>  
+</body>
+
+</html>

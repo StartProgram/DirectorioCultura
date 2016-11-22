@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+</head>
+
+<body>
+
+	<table>
+		<thead>
+			<tr>
+				<td>Usuario</td>
+				<td>Nombre</td>
+				<td>Apellido</td>
+				<td>Categoria</td>
+				<td>Descripcion</td>
+			</tr>
+		</thead>
+
+		<tbody>
+		{% if object_list%}
+		{% for artista in object_list%}
+		<tr>
+			<td>{{artista.user.username}}</td>
+			<td>{{artista.user.first_name}}</td>
+			<td>{{artista.user.last_name}}</td>
+			<td>{{artista.categoria}}</td>
+			<td>{{artista.descripcion}}</td>
+		{% endfor%}
+		{%else%}
+		<h1> No hay artistas <h1>
+		{%endif%}
+
+		</tbody>
+
+
+	</table>
+</body>
+
+</html>

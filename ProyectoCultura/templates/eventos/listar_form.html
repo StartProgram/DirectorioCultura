@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+</head>
+
+<body>
+
+	<table>
+		<thead>
+			<tr>
+				<td>Titulo</td>
+				<td>Descripcion</td>
+				<td>Horario</td>
+				<td>Usuario</td>
+			</tr>
+		</thead>
+
+		<tbody>
+		{% if object_list%}
+		{% for evento in object_list%}
+		<tr>
+			<td>{{evento.titulo}}</td>
+			<td>{{evento.descripcion}}</td>
+			<td>{{evento.horario}}</td>
+			<td>{{evento.user.username}}</td>
+		{% endfor%}
+		{%else%}
+		<h1> No hay eventos <h1>
+		{%endif%}
+
+		</tbody>
+
+
+	</table>
+</body>
+
+</html>

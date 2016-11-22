@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+</head>
+
+<body>
+
+	<h1> Registro artista </h1>
+	<form method='POST' action='' enctype='multipart/form-data'>
+		{%csrf_token%}
+		<p> <label>Nombre:</label>
+		{{form2.first_name}}</p>
+
+		<p><label>Apellido:</label>
+		{{form2.last_name}}</p>
+
+		<p><label>Foto:</label>
+		{{form.imagen}}</p>
+
+		<p><label>Correo:</label>
+		{{form2.email}}</p>
+
+		<p><label>Telefono:</label>
+		{{form.telefono}}
+
+		<p><label>Descripcion:</label>
+		{{form.descripcion}}}
+
+		{{form.errors.as_data}}
+		<p><input type="submit" value="Guardar"></p>
+	</form>
+</body>
+
+</html>l

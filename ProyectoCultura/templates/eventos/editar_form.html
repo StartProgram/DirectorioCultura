@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+</head>
+
+<body>
+
+	<h1> Registro Evento </h1>
+	<form method='POST' action='' enctype='multipart/form-data'>
+		{%csrf_token%}
+		<p> <label>Titulo:</label>
+		{{form.titulo}}</p>
+
+		<p> <label>Categoria:</label>
+		{{form.categoria}}</p>
+
+		<p> <label>Direccion:</label>
+		{{form.direccion}}</p>
+
+		<p> <label>Horario:</label>
+		{{form.horario}}</p>
+
+		<p> <label>Descripcion:</label>
+		{{form.descripcion}}</p>
+
+
+		{{form.errors.as_data}}
+		<p><input type="submit" value="Guardar"></p>
+	</form>
+</body>
+
+</html>
