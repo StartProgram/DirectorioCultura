@@ -10,5 +10,5 @@ urlpatterns = patterns('',
     url(r'^', include('apps.artistas.urls', namespace="artista"),),
     url(r'^', include('apps.eventos.urls', namespace="evento"),),
     url(r'^', include('apps.home.urls', namespace="home")),
-    url(r'^', login, {'template_name': 'home/login.html'},name="login")
+    url(r'^', login, {'template_name': 'usuarios/login.html'},name="login"),
 )

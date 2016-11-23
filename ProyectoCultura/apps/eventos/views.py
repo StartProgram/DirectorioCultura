@@ -16,7 +16,7 @@ def index(request):
 
 class ListarEvento(ListView):
     model = Evento
-    template_name = 'eventos/listar_form.html'
+    template_name = 'eventos/listar.html'
 
 
 class RegistrarEvento(LoginRequiredMixin ,CreateView):

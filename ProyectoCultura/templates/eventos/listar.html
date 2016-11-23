@@ -7,7 +7,7 @@
 			<div class="row">
 				<div class="col-sm-12 col-md-9">
 					<div id="event-carousel" class="carousel slide" data-interval="false">
-						<h2 class="heading">Listado de artistas</h2>
+						<h2 class="heading">Listado de eventos</h2>
 					
 															
 							<div class="well well-sm">
@@ -22,15 +22,15 @@
     <div id="products" class="row list-group">
 
         {% if object_list%}
-        {% for artista in object_list%}
+        {% for evento in object_list%}
         <div class="item  col-xs-4 col-lg-4">
             <div class="thumbnail">
-                <img class="group list-group-image" src="{{artista.imagen.url}}" alt="" />
+                <img class="group list-group-image" src="{{evento.imagen.url}}" alt="" />
                 <div class="caption">
                     <h4 class="group inner list-group-item-heading">
-                        {{artista.user.first_name}} {{artista.user.last_name}}</h4>
+                        {{evento.titulo}}</h4>
                     <p class="group inner list-group-item-text">
-                        {{artista.descripcion}}</p>
+                        {{evento.descripcion}}</p>
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
                             
