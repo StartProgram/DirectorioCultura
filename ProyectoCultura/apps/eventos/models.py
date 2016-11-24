@@ -25,4 +25,3 @@ class Resenia(models.Model):
 	nombre = models.CharField(max_length=35, null=True, blank=True)
 	contenido = models.TextField(max_length=250)
 	evento = models.ForeignKey(Evento, null=False, blank=False, on_delete=models.CASCADE)
-

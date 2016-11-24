@@ -27,4 +27,4 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [BASE_DIR.child('static')]
 
-LOGIN_REDIRECT_URL = 'home:index'
+LOGIN_REDIRECT_URL = 'home:home_user'

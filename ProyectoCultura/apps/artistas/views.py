@@ -47,8 +47,8 @@ class RegistroArtista(CreateView):
 
 class EditarArtista(LoginRequiredMixin ,UpdateView):
 
-	model = Artista
-	second_model = User
+	model = User
+	second_model = Artista
 	template_name = "artistas/editar_form.html"
 	form_class = ArtistaUpdateForm
 	second_form_class = UserUpdateForm
@@ -57,8 +57,8 @@ class EditarArtista(LoginRequiredMixin ,UpdateView):
 	def get_context_data(self, **kwargs):
 		context = super(EditarArtista, self).get_context_data(**kwargs)
 		pk = self.kwargs.get('pk', 0)
-		artista = self.model.objects.get(id=pk)
-		usuario = self.second_model.objects.get(id = artista.user_id)
+		usuario = self.model.objects.get(id=pk)
+		artista = self.second_model.objects.get(user = usuario.id)
 		if 'form' not in context:
 			context['form'] = self.form_class()
 		if 'form2' not in context:

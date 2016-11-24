@@ -19,6 +19,11 @@ class ListarEvento(ListView):
     template_name = 'eventos/listar.html'
 
 
+class ListarEventoUser(ListView):
+    model = Evento
+    template_name = 'eventos/listar_form.html'
+
+
 class RegistrarEvento(LoginRequiredMixin ,CreateView):
     model = Evento
     form_class = EventoForm
