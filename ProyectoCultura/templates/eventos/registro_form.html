@@ -1,4 +1,34 @@
-<!DOCTYPE html>
+{%extends 'base_user/base.html'%}
+
+    <!-- MENU SECTION END-->
+{%block content%}
+
+
+
+    <section id="twitter">
+        <div id="twitter-feed" class="carousel slide" data-interval="false">
+            <div class="row">
+            <div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
+             
+            <form method="POST" enctype='multipart/form-data'>
+            {%csrf_token%}
+			{{form.as_table}}
+			{{form.errors.as_data}}
+			<p><input type="submit" value="Guardar"></p
+			</form>
+            </div>
+        </div>
+        </div>      
+    </section>
+    
+
+{%endblock%}
+
+
+
+
+
+<!--<!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="utf-8">
@@ -31,3 +61,5 @@
 </body>
 
 </html>
+
+-->

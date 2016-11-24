@@ -17,7 +17,7 @@ class Evento(models.Model):
     horario = models.DateTimeField(null=True, blank=True)
     tamanio = models.ForeignKey(Tamanio, null=True, blank=True, on_delete=models.CASCADE)
     descripcion = models.TextField(max_length=200)
-    imagen = models.ImageField(upload_to='/img', null=True, blank=True)
+    imagen = models.ImageField(upload_to='img/', null=True, blank=True)
 
 
 class Resenia(models.Model):

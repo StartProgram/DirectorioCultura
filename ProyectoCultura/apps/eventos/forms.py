@@ -12,6 +12,7 @@ class EventoForm(forms.ModelForm):
         		'direccion',
         		'imagen',
         		'descripcion',
+        		'horario',
 
 
         ]

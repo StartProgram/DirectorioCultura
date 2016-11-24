@@ -2,128 +2,46 @@
 
     <!-- MENU SECTION END-->
 {%block content%}
-    <div class="content-wrapper">
-        <div class="container">
-            <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="page-head-line">Evento</h1>
-                    </div>
-                </div>
-                <div class="row">
-                <div class="col-md-6">
-               
-               
-            </div>
-                <div class="row">
-                
-                
-                     <!--  End  Bordered Table  -->
-                </div>
-            </div>
-                <div class="row">
-                <div class="col-md-6">
-                     <!--    Hover Rows  -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Hover Rows
-                        </div>
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End  Hover Rows  -->
-                </div>
-                <div class="col-md-6">
-                     <!--    Context Classes  -->
-                    <div class="panel panel-default">
-                       
-                        <div class="panel-heading">
-                            Context Classes
-                        </div>
-                        
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="success">
-                                            <td>1</td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                        <tr class="info">
-                                            <td>2</td>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                        <tr class="warning">
-                                            <td>3</td>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                        </tr>
-                                        <tr class="danger">
-                                            <td>4</td>
-                                            <td>John</td>
-                                            <td>Smith</td>
-                                            <td>@jsmith</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <!--  end  Context Classes  -->
-                </div>
-            </div>
 
+
+
+    <section id="twitter">
+        <div id="twitter-feed" class="carousel slide" data-interval="false">
+            <div class="row">
+            <div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
+                
+
+            
+            {% if object_list%}
+            {% for evento in object_list%}
+            <ul class="event-list">
+                    <li>
+                        <time datetime="2014-07-20">
+                            <span class="day">5</span>
+                            <span class="month">Julio</span>
+                            <span class="year">2017</span>
+                        
+                        </time>
+                        <img alt="Independence Day" src="{{evento.imagen.url}}" />
+                        <div class="info">
+                            <h2 class="title">{{evento.titulo}}</h2>
+                            <p class="desc">{{evento.descripcion}}</p>
+                           
+                        </div>                        
+                    </li>
+
+                </ul>
+
+            {%endfor%}
+
+            {%else%}
+            <h1>No eventos creados</h1>
+            {%endif%}
+
+            </div>
         </div>
-    </div>
+        </div>      
+    </section><!--/#twitter-feed-->
+    
 
 {%endblock%}

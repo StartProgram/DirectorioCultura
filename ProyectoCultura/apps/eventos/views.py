@@ -22,6 +22,7 @@ class ListarEvento(ListView):
 class ListarEventoUser(ListView):
     model = Evento
     template_name = 'eventos/listar_form.html'
+    context_object_name = 'evento'
 
 
 class RegistrarEvento(LoginRequiredMixin ,CreateView):
@@ -33,7 +34,7 @@ class RegistrarEvento(LoginRequiredMixin ,CreateView):
 
     def post(self, request, *args, **kwargs):
         self.object = self.get_object
-        form = self.form_class(request.POST)
+        form = self.form_class(request.POST, self.request.FILES)
         if form.is_valid():
             evento = form.save(commit=False)
             evento.user = request.user

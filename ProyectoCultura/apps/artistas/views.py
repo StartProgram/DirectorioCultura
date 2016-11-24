@@ -59,6 +59,7 @@ class EditarArtista(LoginRequiredMixin ,UpdateView):
 		pk = self.kwargs.get('pk', 0)
 		usuario = self.model.objects.get(id=pk)
 		artista = self.second_model.objects.get(user = usuario.id)
+		context['artista'] = artista
 		if 'form' not in context:
 			context['form'] = self.form_class()
 		if 'form2' not in context:
