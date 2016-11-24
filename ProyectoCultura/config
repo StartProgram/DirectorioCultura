@@ -1,0 +1,7 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+[remote "pythonanywhere"]
+	url = alexgomez23@ssh.pythonanywhere.com:/home/alexgomez23/bare-repos/casacultura.git
+	fetch = +refs/heads/*:refs/remotes/pythonanywhere/*

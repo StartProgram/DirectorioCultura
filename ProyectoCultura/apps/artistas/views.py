@@ -40,7 +40,7 @@ class RegistroArtista(CreateView):
 			artista = form.save(commit=False)
 			artista.user = form2.save()
 			artista.save()
-			return HttpResponse("Se ha guardado artista")
+			return render(request, 'home:index')
 		else:
 			return self.render_to_response(self.get_context_data(form=form, form2= form2))
 

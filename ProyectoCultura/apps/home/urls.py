@@ -3,6 +3,6 @@ from .views import IndexView, IndexViewUser
 
 urlpatterns = patterns('',
 	url(r'^$', IndexView.as_view(), name="index"), 
-	url(r'^user/$', IndexViewUser.as_view(), name="home_user"), 
+	url(r'^accounts/login/$', IndexViewUser.as_view(), name="home_user"), 
 
 )

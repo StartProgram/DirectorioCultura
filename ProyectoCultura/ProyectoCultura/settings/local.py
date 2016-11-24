@@ -33,3 +33,5 @@ STATICFILES_DIRS = [BASE_DIR.child("static")]
 MEDIA_ROOT = BASE_DIR.child("media")
 
 LOGIN_REDIRECT_URL = 'home:home_user'
+
+LOGOUT_REDIRECT_URL = 'home:index'

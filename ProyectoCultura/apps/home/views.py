@@ -7,4 +7,4 @@ class IndexView(TemplateView):
 
 
 class IndexViewUser(TemplateView):
-	template_name = 'usuarios/home.html'
+	template_name = 'usuarios/login.html'
