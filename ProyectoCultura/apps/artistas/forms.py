@@ -55,5 +55,4 @@ class UserUpdateForm(forms.ModelForm):
 				'first_name',
 				'last_name',
 				'email',
-				'password',
 		]

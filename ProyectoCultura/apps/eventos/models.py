@@ -15,6 +15,7 @@ class Evento(models.Model):
     categoria = models.ForeignKey(Categoria, null=True, blank=True, on_delete=models.CASCADE)
     direccion = models.CharField(max_length=70)
     horario = models.DateTimeField(null=True, blank=True)
+    autorizado = models.BooleanField(default=False)
     tamanio = models.ForeignKey(Tamanio, null=True, blank=True, on_delete=models.CASCADE)
     descripcion = models.TextField(max_length=200)
     imagen = models.ImageField(upload_to='img/', null=True, blank=True)

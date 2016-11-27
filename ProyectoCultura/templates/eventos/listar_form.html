@@ -1,9 +1,7 @@
-{%extends 'base_user/base.html'%}
+{%extends 'base/base_user.html'%}
 
     <!-- MENU SECTION END-->
 {%block content%}
-
-
 
     <section id="twitter">
         <div id="twitter-feed" class="carousel slide" data-interval="false">
@@ -12,8 +10,8 @@
                 
 
             
-            {% if object_list%}
-            {% for evento in object_list%}
+            {% if evento%}
+            {% for evento in evento%}
             <ul class="event-list">
                     <li>
                         <time datetime="2014-07-20">

@@ -6,6 +6,8 @@ from django.http import HttpResponse
 from braces.views import LoginRequiredMixin
 
 from .models import Artista
+from apps.adm.models import NotificacionArtista
+from apps.eventos.models import Evento
 from .forms import ArtistaForm, UserCreateForm, ArtistaUpdateForm, UserUpdateForm
 
 class PerfilArtista(DetailView):
@@ -23,6 +25,7 @@ class RegistroArtista(CreateView):
 	#Metodo para ver si esta dibujado los forms en el html
 	def get_context_data(self, **kwargs):
 		context = super(RegistroArtista, self).get_context_data(**kwargs)
+		context['eventos'] = Evento.objects.filter(autorizado=True)[:3]		
 		if 'form' not in context:
 			context['form'] = self.form_class(self.request.GET)
 		if 'form2' not in context:
@@ -40,7 +43,9 @@ class RegistroArtista(CreateView):
 			artista = form.save(commit=False)
 			artista.user = form2.save()
 			artista.save()
-			return render(request, 'home:index')
+			noti = NotificacionArtista.objects.create(artista=artista.user)
+			noti.save()
+			return render(request, 'home/index.html')
 		else:
 			return self.render_to_response(self.get_context_data(form=form, form2= form2))
 
@@ -58,7 +63,7 @@ class EditarArtista(LoginRequiredMixin ,UpdateView):
 		context = super(EditarArtista, self).get_context_data(**kwargs)
 		pk = self.kwargs.get('pk', 0)
 		usuario = self.model.objects.get(id=pk)
-		artista = self.second_model.objects.get(user = usuario.id)
+		artista = self.second_model.objects.get(user = usuario)
 		context['artista'] = artista
 		if 'form' not in context:
 			context['form'] = self.form_class()
@@ -70,13 +75,13 @@ class EditarArtista(LoginRequiredMixin ,UpdateView):
 		self.object = self.get_object()
 		pk = kwargs['pk']
 		artista = self.model.objects.get(id=pk)
-		usuario = self.second_model.objects.get(id = artista.user_id)
+		usuario = self.second_model.objects.get(user = artista)
 		form = self.form_class(request.POST, request.FILES, instance=artista)
 		form2 = self.second_form_class(request.POST, instance=usuario)
 		if form.is_valid() and form2.is_valid():
 			form.save()
 			form2.save()
-			return HttpResponse("Se modifico correctamente")
+			return render(request, 'home/index_user.html')
 		else:
 			return self.render_to_response(self.get_context_data(form=form, form2= form2))
 
@@ -84,4 +89,13 @@ class ListarArtista(ListView):
 	#General
 	model = Artista
 	template_name = 'artistas/listar_form.html'
+	queryset = Artista.objects.filter(autorizado=True)
+
+	def get_context_data(self, **kwargs):
+		context = super(ListarArtista, self).get_context_data(**kwargs)
+		context['eventos'] = Evento.objects.filter(autorizado=True)[:3]
+		return context
+
+
+
 

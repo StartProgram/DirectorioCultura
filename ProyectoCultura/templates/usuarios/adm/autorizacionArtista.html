@@ -1,0 +1,94 @@
+{%extends 'base/base_user.html'%}
+
+{%block content%}
+
+    <!-- MENU SECTION END-->
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 class="page-head-line">Usuario {{usuario.username}}</h4>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="text-center">
+        <img src="{{usuario.artista.imagen.url}}" class="avatar img-circle img-thumbnail" alt="avatar">
+      </div>
+    </div>
+    <!-- edit form column -->
+    <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
+      <div class="alert alert-info alert-dismissable">
+        <a class="panel-close close" data-dismiss="alert">×</a> 
+        <i class="fa fa-coffee"></i> 
+      </div>
+      <h3>Informacion personal</h3>
+      <form class="form-horizontal" role="form" method="POST">
+      {%csrf_token%}
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Nombre:</label>
+          <div class="col-lg-8">
+            <input class="form-control" value="{{usuario.first_name}}" type="text" disabled>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Apellido:</label>
+          <div class="col-lg-8">
+            <input class="form-control" value="{{usuario.last_name}}" type="text" disabled>
+          </div>
+        </div>
+
+ 
+<script type="text/javascript">
+    $(".form_datetime").datetimepicker({
+        format: "dd MM yyyy - hh:ii",
+        autoclose: true,
+        todayBtn: true,
+        pickerPosition: "bottom-left"
+    });
+</script>
+
+               <div class="form-group">
+          <label class="col-lg-3 control-label">Email:</label>
+          <div class="col-lg-8">
+            <input class="form-control" value="{{usuario.email}}" type="text" disabled>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Telefono:</label>
+          <div class="col-lg-8">
+            <input class="form-control" value="{{usuario.artista.telefono}}" type="text" disabled>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label">Usuario:</label>
+          <div class="col-md-8">
+            <input class="form-control" value="{{usuario.username}}" type="text" disabled>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label"></label>
+          <div class="col-md-8">
+
+
+            <input class="btn btn-primary" value="Autorizar" type="submit">
+
+            <span></span>
+            <input class="btn btn-danger" value="Rechazar" type="">
+          </div>
+        </div>
+      </form>
+    </div>
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    
+
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{%endblock%}

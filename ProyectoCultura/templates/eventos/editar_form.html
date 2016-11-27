@@ -1,33 +1,109 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="utf-8">
-</head>
+{%extends 'base/base_user.html'%}
 
-<body>
+    <!-- MENU SECTION END-->
+{%block content%}
 
-	<h1> Registro Evento </h1>
-	<form method='POST' action='' enctype='multipart/form-data'>
-		{%csrf_token%}
-		<p> <label>Titulo:</label>
-		{{form.titulo}}</p>
+ <!-- MENU SECTION END-->
+ <div class="content-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 class="page-head-line">Creacion de evento</h4>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="text-center">
+        <img src="" class="avatar img-circle img-thumbnail" alt="avatar">
+        <h6>Subir imagen</h6>
+        <input type="file" class="text-center center-block well well-sm">
+      </div>
+    </div>
+    <!-- edit form column -->
+    <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
+      <div class="alert alert-info alert-dismissable">
+        <a class="panel-close close" data-dismiss="alert">×</a> 
+        <i class="fa fa-coffee"></i>
+        <strong>Llenar todos los campos</strong>. 
+      </div>
+      <h3>Evento</h3>
+      <form class="form-horizontal" role="form" method="POST" enctype='multipart/form-data'>
+      {%csrf_token%}
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Titulo:</label>
+          <div class="col-lg-8">
+            <input class="form-control" value="" type="text" name="titulo">
+          </div>
+        </div>
 
-		<p> <label>Categoria:</label>
-		{{form.categoria}}</p>
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Horario:</label>
+          <div class="col-lg-8">
+            <input class="form-control" value="" type="text" name="horario">
+          </div>
+        </div>
 
-		<p> <label>Direccion:</label>
-		{{form.direccion}}</p>
-
-		<p> <label>Horario:</label>
-		{{form.horario}}</p>
-
-		<p> <label>Descripcion:</label>
-		{{form.descripcion}}</p>
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Direccion:</label>
+          <div class="col-lg-8">
+            <input class="form-control" value="" type="text" name="direccion">
+          </div>
+        </div>
 
 
-		{{form.errors.as_data}}
-		<p><input type="submit" value="Guardar"></p>
-	</form>
-</body>
+ 
+<script type="text/javascript">
+    $(".form_datetime").datetimepicker({
+        format: "dd MM yyyy - hh:ii",
+        autoclose: true,
+        todayBtn: true,
+        pickerPosition: "bottom-left"
+    });
+</script>
 
-</html>
+          <div class="form-group">
+          <label class="col-lg-3 control-label">Descripcion:</label>
+          <div class="col-lg-8">
+            <textarea class="form-control" value="" type="text" name="descripcion">
+            </textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Categoria:</label>
+          <div class="col-lg-8">
+            <div class="ui-select">
+              <select id="user_time_zone" class="form-control">
+                <option value="Musica">Musica</option>
+                <option value="Teatro">Teatro</option>
+                <option value="Danza">Danza</option>
+                <option value="Otros">Otros</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-3 control-label"></label>
+          <div class="col-md-8">
+            <input class="btn btn-primary" value="Guardar cambios" type="submit">
+            <span></span>
+            <input class="btn btn-default" value="Cancelar" type="reset">
+          </div>
+        </div>
+      </form>
+    </div>
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    
+
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+{%endblock%}
+

@@ -56,5 +56,4 @@ USE_TZ = False
 
 TEMPLATE_DIRS = [BASE_DIR.child('templates')]
 
-
-
+AUTH_PROFILE_MODULE = 'artistas.Artista'

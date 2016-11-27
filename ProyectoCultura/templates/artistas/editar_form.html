@@ -1,4 +1,4 @@
-{%extends 'base_user/base.html'%}
+{%extends 'base/base_user.html'%}
 
 {%block content%}
 
@@ -23,17 +23,20 @@
         Toda la informacion subida queda a criterio del  <strong>artista</strong>. 
       </div>
       <h3>Informacion personal</h3>
-      <form class="form-horizontal" role="form">
+      <form class="form-horizontal" role="form" method="POST" enctype='multipart/form-data'>
+      {%csrf_token%}
+      {{form.errors.as_data}}
+      {{form2.errors.as_data}}
         <div class="form-group">
           <label class="col-lg-3 control-label">Nombre:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="{{form2.first_name.value}}" type="text">
+            <input class="form-control" value="{{form2.first_name.value}}" type="text" name="{{form2.first_name.name}}">
           </div>
         </div>
         <div class="form-group">
           <label class="col-lg-3 control-label">Apellido:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="{{form2.last_name.value}}" type="text">
+            <input class="form-control" value="{{form2.last_name.value}}" type="text" name="last_name">
           </div>
         </div>
 
@@ -47,10 +50,10 @@
     });
 </script>
 
-               <div class="form-group">
+          <div class="form-group">
           <label class="col-lg-3 control-label">Email:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="{{form2.email.value}}" type="text">
+            <input class="form-control" value="{{form2.email.value}}" type="text" name="email">
           </div>
         </div>
         <div class="form-group">
@@ -69,7 +72,7 @@
         <div class="form-group">
           <label class="col-md-3 control-label">Usuario:</label>
           <div class="col-md-8">
-            <input class="form-control" value="{{form2.username.value}}" type="text">
+            <input class="form-control" value="{{form2.username.value}}" type="text" name="username">
           </div>
         </div>
         <div class="form-group">
@@ -87,7 +90,7 @@
         <div class="form-group">
           <label class="col-md-3 control-label"></label>
           <div class="col-md-8">
-            <input class="btn btn-primary" value="Guardar cambios" type="button">
+            <input class="btn btn-primary" value="Guardar cambios" type="submit">
             <span></span>
             <input class="btn btn-default" value="Cancelar" type="reset">
           </div>

@@ -1,0 +1,64 @@
+{%extends 'base/base_user.html'%}
+
+{%block content%}
+
+    <section id="twitter">
+        <div id="twitter-feed" class="carousel slide" data-interval="false">
+            <div class="row">
+            <div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
+                
+
+            <h4 class="page-head-line">Notificaciones de artistas</h4>         
+            {% if artistas%}
+            {% for noti in artistas%}
+            <ul class="event-list">
+                    <li>
+
+                        <img alt="Independence Day" src="{{noti.artista.artista.imagen.url}}" />
+                        <div class="info">
+                            <h2 class="title">{{noti.artista.first_name}} {{noti.artista.last_name}}</h2>
+                            <p class="desc">{{noti.artista.artista.descripcion}}</p>
+                            <a href="{% url 'adm:autorizacion_artista' noti.artista.id%}"><button type="sumbit" class="btn btn-danger">Ver</button></a>
+                        </div>                        
+                    </li>
+                </ul>
+
+                </form>
+
+            {%endfor%}
+
+            {%else%}
+            <h6>No hay notifiaciones de artistas</h6>
+            <br>
+            {%endif%}
+
+            <h4 class="page-head-line">Notificaciones de eventos</h4>
+            {% if eventos%}
+            {% for noti in eventos%}
+            <ul class="event-list">
+                    <li>
+
+                        <img alt="Independence Day" src="{{noti.evento.imagen.url}}" />
+                        <div class="info">
+                            <h2 class="title">{{noti.evento.titulo}}</h2>
+                            <p class="desc">{{noti.evento.descripcion}}</p>
+                            <a href="{% url 'adm:autorizacion_evento' noti.evento.id %}"><button type="sumbit" class="btn btn-danger">Ver</button></a>
+                        </div>                        
+                    </li>
+                </ul>
+
+                </form>
+
+            {%endfor%}
+
+            {%else%}
+            <h5>No hay notificaciones de eventos</h5>
+            {%endif%}
+
+            </div>
+        </div>
+        </div>      
+    </section>
+    
+
+{%endblock%}
