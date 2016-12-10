@@ -6,44 +6,44 @@
 			<div class="row">
 						<div class="watch1">
 					<img class="img-responsive" src="static/img/guitar.png" alt="">
-				</div>		
+				</div>
 				<div class="col-md-4 col-md-offset-2 col-sm-5">
 					<h2>Registro usuarios</h2>
-				</div>				
-				<div class="col-sm-7 col-md-6">					
-					
+				</div>
+				<div class="col-sm-7 col-md-6">
+
 
 						<div class="panel-body">
 			    		<form role="form" method="POST" enctype='multipart/form-data'>
 			    			{%csrf_token%}
-			    			{{form.errors.as_data}}
+
 			    			<div class="row">
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
-			                <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Primer nombre">
+			                <input type="text" name="first_name" id="first_name" class="form-control input-sm"  required="required" placeholder="Primer nombre">
 			    					</div>
 			    				</div>
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
-			    						<input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Apellido">
+			    						<input type="text" name="last_name" id="last_name" class="form-control input-sm"   required="required" placeholder="Apellido">
 			    					</div>
 			    				</div>
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
-			    						<input type="text" name="telefono" id="telefono" class="form-control input-sm" placeholder="Telefono">
+			    						<input type="text" name="telefono" id="telefono" class="form-control input-sm"  required="required" placeholder="Telefono">
 			    					</div>
 			    				</div>
 
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
-			    						<input type="usuario" name="username" id="username" class="form-control input-sm" placeholder="Usuario">
+			    						<input type="usuario" name="username" id="username" class="form-control input-sm"   required="required" placeholder="Usuario">
 			    					</div>
 			    				</div>
 
 
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
                                 	<div class="form-group">
-                        				<input type="date" name="fecha_nacimiento" id="fecha_nacimiento" class="form-control input-sm"  placeholder="Fecha nacimiento">
+                        				<input type="date" name="fecha_nacimiento" id="fecha_nacimiento" class="form-control input-sm"  required="required"  placeholder="Fecha nacimiento">
                    					 </div>
                 				</div>
 
@@ -83,25 +83,25 @@
 					                            <option>Suchitepequez</option>
 					                            <option>Totonicapan</option>
 					                            <option>Zacapa</option>
-					                            
+
 					                        </select>-->
 					         </div>
 
-							
+
 
 			    			<div class="form-group">
-			    				<input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+			    				<input type="email" name="email" id="email" class="form-control input-sm"  required="required" placeholder="Email Address">
 			    			</div>
 			    			<div class="form-group">
-			    				  <input type="file" name="imagen" id="imagen" class="form-control input-sm" placeholder="Subir imagen">
-                    
+			    				  <input type="file" name="imagen" id="imagen" class="form-control input-sm"  required="required" placeholder="Subir imagen">
+
 			    			</div>
-			    			
+
 
 			    			<div class="row">
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
-			    						<input type="password" name="password1" id="password1" class="form-control input-sm" placeholder="Password">
+			    						<input type="password" name="password1" id="password1" class="form-control input-sm"  required="required" placeholder="Password">
 			    					</div>
 			    				</div>
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
@@ -114,16 +114,16 @@
 			    			<div class="form-group">
 			    				<textarea type="descripcion"  name="descripcion"  rows="5" id="descrpicion" class="form-control input-sm" placeholder="descripcion"></textarea>
 			    			</div>
-			    			
+
 			    			<input type="submit" value="Register" class="btn btn-info btn-block">
-			    		
+
 			    		</form>
-			    	
+
 
 
 				</div>
 			</div>
-			
+
 		</div>
 	</section>
 {% endblock%}

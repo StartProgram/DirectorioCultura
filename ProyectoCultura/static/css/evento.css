@@ -58,7 +58,7 @@
     width: 100%;
 }
 .btn-warning bnt-action{
-    margin: 0% 0% auto;    
+    margin: 0% 0% auto;
 }
 
 figcaption .project-details {
@@ -105,7 +105,7 @@ figcaption .project-creator {
     margin-left: -45%;
     line-height: 18px;
     letter-spacing: 1px;
-}                    
+}
 .glyphicon { margin-right:5px; } .thumbnail { margin-bottom: 20px; padding: 0px; -webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 0px; } .item.list-group-item { float: none; width: 100%; background-color: #fff; margin-bottom: 10px; } .item.list-group-item:nth-of-type(odd):hover,.item.list-group-item:hover { background: #428bca; } .item.list-group-item .list-group-image { margin-right: 10px; } .item.list-group-item .thumbnail { margin-bottom: 0px; } .item.list-group-item .caption { padding: 9px 9px 0px 9px; } .item.list-group-item:nth-of-type(odd) { background: #eeeeee; } .item.list-group-item:before, .item.list-group-item:after { display: table; content: " "; } .item.list-group-item img { float: left; } .item.list-group-item:after { clear: both; } .list-group-item-text { margin: 0 0 11px; }
 
 
@@ -115,12 +115,12 @@ figcaption .project-creator {
 
 @import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic");
     @import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
-   
-    
+
+
     .event-list {
         list-style: none;
         font-family: 'Lato', sans-serif;
-        margin: 0px;
+        margin: 25px;
         padding: 0px;
     }
     .event-list > li {
@@ -200,13 +200,13 @@ figcaption .project-creator {
         width: 100%;
         color: rgb(30, 30, 30);
         text-decoration: none;
-    } 
-    .event-list > li > .social > ul > li {    
+    }
+    .event-list > li > .social > ul > li {
         padding: 0px;
     }
     .event-list > li > .social > ul > li > a {
         padding: 3px 0px;
-    } 
+    }
     .event-list > li > .info > ul > li:hover,
     .event-list > li > .social > ul > li:hover {
         color: rgb(30, 30, 30);
@@ -256,7 +256,7 @@ figcaption .project-creator {
             float: left;
         }
         .event-list > li > .info {
-            background-color: #a94442;
+            background-color: #ffffff;
             overflow: hidden;
         }
         .event-list > li > time,
@@ -271,8 +271,8 @@ figcaption .project-creator {
             height: 120px;
             text-align: left;
             padding-right: 40px;
-        }   
-        .event-list > li > .info > .title, 
+        }
+        .event-list > li > .info > .title,
         .event-list > li > .info > .desc {
             padding: 0px 10px;
         }
@@ -291,7 +291,7 @@ figcaption .project-creator {
         .event-list > li > .social > ul {
             border-left: 1px solid rgb(230, 230, 230);
         }
-        .event-list > li > .social > ul > li {          
+        .event-list > li > .social > ul > li {
             display: block;
             padding: 0px;
         }

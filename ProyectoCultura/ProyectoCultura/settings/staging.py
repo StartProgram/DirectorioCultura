@@ -10,11 +10,11 @@ ALLOWED_HOSTS = []
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'cultura',
-        'USER': 'usercultura',
-        'PASSWORD': 'cultura',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'NAME': 'AlexGomez23$cultura',
+        'USER': 'AlexGomez23',
+        'PASSWORD': 'alexander',
+        'HOST': 'AlexGomez23.mysql.pythonanywhere-services.com',
+        'PORT': '',
         'STORAGE_ENGINE': 'INNODB',
     }
 }
@@ -27,7 +27,7 @@ MEDIA_URL = "/media/"
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [BASE_DIR.child("static")]
+STATIC_ROOT = BASE_DIR.child("static")
 
 MEDIA_ROOT = BASE_DIR.child("media")
 

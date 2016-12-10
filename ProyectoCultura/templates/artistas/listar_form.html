@@ -1,6 +1,6 @@
 {% extends 'base/base_principal.html'%}
 
-	
+
 {% block content%}
 	<section id="event">
 		<div class="container">
@@ -8,10 +8,10 @@
 				<div class="col-sm-12 col-md-9">
 					<div id="event-carousel" class="carousel slide" data-interval="false">
 						<h2 class="heading">Listado de artistas</h2>
-					
-															
+
+
 							<div class="well well-sm">
-        
+
         <div class="btn-group">
             <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
             </span>Lista</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
@@ -33,11 +33,9 @@
                         {{artista.descripcion}}</p>
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
-                            
+
                         </div>
-                        <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success" href="#">Ver mas</a>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -47,14 +45,7 @@
         <h1> No hay artistas registrados <h1>
         {%endif%}
 
-         <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success" href="#">Atras</a>
-                        </div> <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success" href="#">Siguiente</a>
-                        </div>
 
-
-    </div>
 
 
 
@@ -62,8 +53,8 @@
 
 					</div>
 				</div>
-			</div>			
+			</div>
 		</div>
 	</section><!--/#event-->
-	
+
 {% endblock %}

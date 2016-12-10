@@ -18,9 +18,9 @@
     <!-- edit form column -->
     <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
       <div class="alert alert-info alert-dismissable">
-        <a class="panel-close close" data-dismiss="alert">×</a> 
+        <a class="panel-close close" data-dismiss="alert">×</a>
         <i class="fa fa-coffee"></i>
-        <strong>Llenar todos los campos</strong>. 
+        <strong>Llenar todos los campos</strong>.
       </div>
       <h3>Evento</h3>
       <form class="form-horizontal" role="form" method="POST" enctype='multipart/form-data'>
@@ -35,7 +35,7 @@
         <div class="form-group">
           <label class="col-lg-3 control-label">Horario:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="" type="text" name="horario">
+            <input class="form-control" value="2016-12-08 10:00" type="text" name="horario">
           </div>
         </div>
 
@@ -54,7 +54,7 @@
         </div>
 
 
- 
+
 <script type="text/javascript">
     $(".form_datetime").datetimepicker({
         format: "dd MM yyyy - hh:ii",
@@ -75,12 +75,7 @@
           <label class="col-lg-3 control-label">Categoria:</label>
           <div class="col-lg-8">
             <div class="ui-select">
-              <select id="user_time_zone" class="form-control">
-                <option value="Musica">Musica</option>
-                <option value="Teatro">Teatro</option>
-                <option value="Danza">Danza</option>
-                <option value="Otros">Otros</option>
-              </select>
+                {{form.categoria}}
             </div>
           </div>
         </div>
@@ -101,9 +96,9 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    
 
-                    
+
+
                 </div>
 
             </div>

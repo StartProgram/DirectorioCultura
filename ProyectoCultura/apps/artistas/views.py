@@ -14,18 +14,18 @@ class PerfilArtista(DetailView):
 
 	model = Artista
 	template_name = 'artistas/perfil_detail.html'
-	
+
 
 class RegistroArtista(CreateView):
 	form_class = ArtistaForm
-	second_form_class = UserCreateForm 
+	second_form_class = UserCreateForm
 	template_name = 'artistas/registro_form.html'
 	success = "/"
 
 	#Metodo para ver si esta dibujado los forms en el html
 	def get_context_data(self, **kwargs):
 		context = super(RegistroArtista, self).get_context_data(**kwargs)
-		context['eventos'] = Evento.objects.filter(autorizado=True)[:3]		
+		context['eventos'] = Evento.objects.filter(autorizado=True)[:3]
 		if 'form' not in context:
 			context['form'] = self.form_class(self.request.GET)
 		if 'form2' not in context:
@@ -33,7 +33,7 @@ class RegistroArtista(CreateView):
 		return context
 
 	#Metodo que toma el metodo post que el formulario envia,
-	#Verfica si son validos, guarda el primer formulario, para 
+	#Verfica si son validos, guarda el primer formulario, para
 	#conseguir al usuario y lo vincula con artista
 	def post(self, request, *args, **kwargs):
 		self.object = self.get_object
@@ -74,8 +74,8 @@ class EditarArtista(LoginRequiredMixin ,UpdateView):
 	def post(self, request, *args, **kwargs):
 		self.object = self.get_object()
 		pk = kwargs['pk']
-		artista = self.model.objects.get(id=pk)
-		usuario = self.second_model.objects.get(user = artista)
+		usuario = self.model.objects.get(id=pk)
+		artista = self.second_model.objects.get(user = usuario)
 		form = self.form_class(request.POST, request.FILES, instance=artista)
 		form2 = self.second_form_class(request.POST, instance=usuario)
 		if form.is_valid() and form2.is_valid():

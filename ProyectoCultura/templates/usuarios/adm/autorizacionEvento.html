@@ -17,9 +17,9 @@
     <!-- edit form column -->
     <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
       <div class="alert alert-info alert-dismissable">
-        <a class="panel-close close" data-dismiss="alert">×</a> 
+        <a class="panel-close close" data-dismiss="alert">×</a>
         <i class="fa fa-coffee"></i>
-        <strong>Datos</strong>. 
+        <strong>Datos</strong>.
       </div>
       <h3>Evento</h3>
       <form class="form-horizontal" role="form" method="POST" enctype='multipart/form-data'>
@@ -27,26 +27,26 @@
         <div class="form-group">
           <label class="col-lg-3 control-label">Titulo:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="{{evento.titulo}}" type="text" name="titulo">
+            <input class="form-control" value="{{evento.titulo}}" type="text" name="titulo" disabled>
           </div>
         </div>
 
         <div class="form-group">
           <label class="col-lg-3 control-label">Horario:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="{{evento.horario}}" type="text" name="horario">
+            <input class="form-control" value="{{evento.horario}}" type="text" name="horario" disabled>
           </div>
         </div>
 
         <div class="form-group">
           <label class="col-lg-3 control-label">Direccion:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="{{evento.direccion}}" type="text" name="direccion">
+            <input class="form-control" value="{{evento.direccion}}" type="text" name="direccion" disabled>
           </div>
         </div>
 
 
- 
+
 <script type="text/javascript">
     $(".form_datetime").datetimepicker({
         format: "dd MM yyyy - hh:ii",
@@ -59,8 +59,8 @@
           <div class="form-group">
           <label class="col-lg-3 control-label">Descripcion:</label>
           <div class="col-lg-8">
-            <textarea class="form-control" value="{{evento.descripcion}}" type="text" name="descripcion">
-            </textarea>
+            <textarea class="form-control" value="" type="text" name="descripcion" disabled>{{evento.descripcion}}
+            </textarea >
           </div>
         </div>
 
@@ -69,7 +69,6 @@
           <div class="col-md-8">
             <input class="btn btn-primary" value="Aceptar" type="submit">
             <span></span>
-            <input class="btn btn-danger" value="Rechazar" type="reset">
           </div>
         </div>
       </form>
@@ -80,9 +79,9 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    
 
-                    
+
+
                 </div>
 
             </div>

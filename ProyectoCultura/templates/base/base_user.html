@@ -56,21 +56,20 @@
                             </a>
                             <div class="dropdown-menu dropdown-settings">
                                 <div class="media">
-                                    <a class="media-left" href="#">
-                                    {% if user.imagen.url %}
 
-                                        <img src="{{user.imagen.url}}" alt="" class="img-rounded" />
-                                    {%else%}
-                                        <img src="{%static 'img/64-64.jpg'%}" alt="" class="img-rounded" />
-                                    {%endif%}
-                                    </a>
                                     <div class="media-body">
+                                        {% if user.is_staff%}
+                                        <h4 class="media-heading">Administrador</h4>
+
+                                        {%else%}
                                         <h4 class="media-heading">{{user.first_name}}</h4>
+
+                                        {%endif%}
 
                                     </div>
                                 </div>
                                 <hr />
-                                <a href="" class="btn btn-info btn-sm">Perfil</a>&nbsp; <a href="{%url 'logout'%}" class="btn btn-danger btn-sm">Cerrar Sesion</a>
+                                 <a href="{%url 'logout'%}" class="btn btn-danger btn-sm">Cerrar Sesion</a>
 
                             </div>
                         </li>
@@ -88,14 +87,14 @@
 
 {% if user.is_authenticated %}
 {% if user.is_staff%}
-    
+
 <section class="menu-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="navbar-collapse collapse ">
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
-                            <li><a href="#">Escritorio</a></li>
+                            <li><a href="{%url 'home:home_user'%}">Escritorio</a></li>
                             <li><a href="{%url 'evento:listar_user'%}">Evento</a></li>
                             <li><a href="{%url 'evento:crear' %}">Crear evento</a></li>
                             <li><a href="#">Crear capsula</a></li>

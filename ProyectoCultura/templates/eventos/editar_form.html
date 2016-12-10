@@ -8,47 +8,54 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h4 class="page-head-line">Creacion de evento</h4>
+                    <h4 class="page-head-line">Modificacion de evento</h4>
                         <div class="col-md-4 col-sm-6 col-xs-12">
       <div class="text-center">
-        <img src="" class="avatar img-circle img-thumbnail" alt="avatar">
-        <h6>Subir imagen</h6>
-        <input type="file" class="text-center center-block well well-sm">
+
+
       </div>
     </div>
     <!-- edit form column -->
     <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
       <div class="alert alert-info alert-dismissable">
-        <a class="panel-close close" data-dismiss="alert">×</a> 
+        <a class="panel-close close" data-dismiss="alert">×</a>
         <i class="fa fa-coffee"></i>
-        <strong>Llenar todos los campos</strong>. 
+        <strong>Llenar todos los campos</strong>.
       </div>
       <h3>Evento</h3>
       <form class="form-horizontal" role="form" method="POST" enctype='multipart/form-data'>
       {%csrf_token%}
+
         <div class="form-group">
           <label class="col-lg-3 control-label">Titulo:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="" type="text" name="titulo">
+            <input class="form-control" value="{{evento.titulo}}" type="text" name="titulo">
           </div>
         </div>
 
         <div class="form-group">
           <label class="col-lg-3 control-label">Horario:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="" type="text" name="horario">
+            <input class="form-control" value="{{evento.horario| date:'Y-m-d H:i'}}" type="text" name="horario">
           </div>
         </div>
 
         <div class="form-group">
           <label class="col-lg-3 control-label">Direccion:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="" type="text" name="direccion">
+            <input class="form-control" value="{{evento.direccion}}" type="text" name="direccion">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Imagen:</label>
+          <div class="col-lg-8">
+            <input class="form-control" value="" type="file" name="imagen">
           </div>
         </div>
 
 
- 
+
 <script type="text/javascript">
     $(".form_datetime").datetimepicker({
         format: "dd MM yyyy - hh:ii",
@@ -61,7 +68,7 @@
           <div class="form-group">
           <label class="col-lg-3 control-label">Descripcion:</label>
           <div class="col-lg-8">
-            <textarea class="form-control" value="" type="text" name="descripcion">
+            <textarea class="form-control" value="{{evento.descripcion}}" type="text" name="descripcion">{{evento.descripcion}}
             </textarea>
           </div>
         </div>
@@ -69,12 +76,7 @@
           <label class="col-lg-3 control-label">Categoria:</label>
           <div class="col-lg-8">
             <div class="ui-select">
-              <select id="user_time_zone" class="form-control">
-                <option value="Musica">Musica</option>
-                <option value="Teatro">Teatro</option>
-                <option value="Danza">Danza</option>
-                <option value="Otros">Otros</option>
-              </select>
+              {{form.categoria}}
             </div>
           </div>
         </div>
@@ -95,9 +97,9 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    
 
-                    
+
+
                 </div>
 
             </div>
@@ -106,4 +108,7 @@
 
 
 {%endblock%}
+
+
+
 

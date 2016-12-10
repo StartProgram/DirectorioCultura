@@ -1,7 +1,7 @@
 
 /*=============================================================
     Authour URL: www.designbootstrap.com
-    
+
     http://www.designbootstrap.com/
 
     License: MIT
@@ -11,7 +11,7 @@
     100% Free To use For Personal And Commercial Use.
 
     IN EXCHANGE JUST TELL PEOPLE ABOUT THIS WEBSITE
-   
+
 ========================================================  */
 
 
@@ -24,6 +24,10 @@
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 30px;
+        height: 100%;
+  margin: 0;
+  padding: 0;
+    }
 }
 
 .set-radius-zero {
@@ -201,6 +205,8 @@ footer {
     color: #fff;
     font-size: 12px;
     background-color: #1b7b98;
+
+
 }
 
     footer a, footer a:hover {
@@ -209,7 +215,7 @@ footer {
     }
 
 /*==============================================
-    DASHBOARD  STYLES    
+    DASHBOARD  STYLES
  =============================================*/
 
 /* DASHBOARD ICONS */

@@ -11,16 +11,15 @@
                         <div class="col-md-4 col-sm-6 col-xs-12">
       <div class="text-center">
         <img src="{{artista.imagen.url}}" class="avatar img-circle img-thumbnail" alt="avatar">
-        <h6>Puede subir una fotografia diferente...</h6>
-        <input type="file" class="text-center center-block well well-sm">
+
       </div>
     </div>
     <!-- edit form column -->
     <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
       <div class="alert alert-info alert-dismissable">
-        <a class="panel-close close" data-dismiss="alert">×</a> 
+        <a class="panel-close close" data-dismiss="alert">×</a>
         <i class="fa fa-coffee"></i>
-        Toda la informacion subida queda a criterio del  <strong>artista</strong>. 
+        Toda la informacion subida queda a criterio del  <strong>artista</strong>.
       </div>
       <h3>Informacion personal</h3>
       <form class="form-horizontal" role="form" method="POST" enctype='multipart/form-data'>
@@ -40,7 +39,7 @@
           </div>
         </div>
 
- 
+
 <script type="text/javascript">
     $(".form_datetime").datetimepicker({
         format: "dd MM yyyy - hh:ii",
@@ -54,6 +53,12 @@
           <label class="col-lg-3 control-label">Email:</label>
           <div class="col-lg-8">
             <input class="form-control" value="{{form2.email.value}}" type="text" name="email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label">Imagen:</label>
+          <div class="col-md-8">
+                 <input type="file" name="imagen">
           </div>
         </div>
         <div class="form-group">
@@ -75,18 +80,9 @@
             <input class="form-control" value="{{form2.username.value}}" type="text" name="username">
           </div>
         </div>
-        <div class="form-group">
-          <label class="col-md-3 control-label">Contraseña:</label>
-          <div class="col-md-8">
-            <input class="form-control" value="11111122333" type="password">
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-md-3 control-label">Confirmar contraseña:</label>
-          <div class="col-md-8">
-            <input class="form-control" value="11111122333" type="password">
-          </div>
-        </div>
+
+
+
         <div class="form-group">
           <label class="col-md-3 control-label"></label>
           <div class="col-md-8">
@@ -103,9 +99,9 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    
 
-                    
+
+
                 </div>
 
             </div>

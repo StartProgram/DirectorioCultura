@@ -65,6 +65,7 @@ class RegistrarEvento(LoginRequiredMixin ,CreateView):
 class EditarEvento(LoginRequiredMixin ,UpdateView):
     model = Evento
     form_class =EventoForm
+    context_object_name="evento"
     template_name= 'eventos/editar_form.html'
     success_url = '/'
     login_url= '/'
